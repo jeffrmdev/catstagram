@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <header class="p-5 border-b bg-white shadow">
+    <header class="p-5 border-b bg-white shadow-inner">
         <div class=" container mx-auto flex justify-between p-5 border-p items-center">
             <h1 class="text-3xl font-bold">
                 <a href="/">CatStragram</a>
@@ -24,12 +24,11 @@
 
     <!-- Información de las vistas !-->
     <main class="container mx-auto">
-        <h2 class="font-thin text-pretty text-2xl mt-10 mb-10">
+        <h2 class="font-thin text-center text-4xl mt-5 mb-10">
             @yield('titulo')
         </h2>
 
         @yield('contenido')
-
 
     </main>
 
