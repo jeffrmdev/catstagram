@@ -34,7 +34,7 @@
     </main>
 
 
-    <footer class="container">
+    <footer class="container mx-auto">
         <div class="m-10 text-center text-gray-500 font-extralight">
             CatStagram - Todos los derechos reservados
             {{now() -> year}}
