@@ -12,12 +12,12 @@
     <header class="p-5 border-b bg-white shadow">
         <div class=" container mx-auto flex justify-between p-5 border-p items-center">
             <h1 class="text-3xl font-bold">
-                CatStragram
+                <a href="/">CatStragram</a>
             </h1>
 
             <nav class="flex gap-2 items-center">
                 <a class="text-sm uppercase font-light" href="#">Login</a>
-                <a class="text-sm uppercase font-light" href="#">Crear cuenta</a>
+                <a class="text-sm uppercase font-light" href="/crear-cuenta">Crear cuenta</a>
             </nav>
         </div>
     </header>
