@@ -14,11 +14,21 @@
             <h1 class="text-3xl font-bold">
                 <a href="/">CatStragram</a>
             </h1>
-
-            <nav class="flex gap-2 items-center">
-                <a class="text-sm uppercase font-light" href="#">Login</a>
-                <a class="text-sm uppercase font-light" href="{{ route('register') }}">Crear cuenta</a>
-            </nav>
+            @auth
+                <nav class="flex gap-2 items-center align-baseline md:grid">
+                  <a class="text-sm uppercase font-light" href="{{ route("post.index", [$user = Auth::user()]) }}">Mi Perfil</a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-sm uppercase font-light" href="{{ route('logout') }}">Cerrar sesión</button>
+                    </form>
+                </nav>
+            @endauth
+            @guest
+                <nav class="flex gap-2 items-center">
+                    <a class="text-sm uppercase font-light" href="{{ route('login') }}">Entrar</a>
+                    <a class="text-sm uppercase font-light" href="{{ route('register') }}">Crear cuenta</a>
+                </nav>
+            @endguest
         </div>
     </header>
 
