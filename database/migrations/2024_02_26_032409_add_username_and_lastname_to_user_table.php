@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('username')->unique();
-            $table->string('lastname');
+            $table->string('lastname')->after('name');
+            $table->string('username')->unique()->after('lastname');
+            
         });
     }
 
