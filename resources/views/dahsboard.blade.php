@@ -16,26 +16,26 @@
                 <img class="img h-52 -m-2" src="{{ asset('img/usercat.svg')}}" alt="Imagen Usuario"/>
                 <button onclick="alert('hola mundo')" class="h-fit w-fit p-2 bg-slate-500 text-white transition-colors hover:bg-slate-700">Cambiar imagen</button>
             </div>
-            <div class="col-span-2 md:col-span-1 w-full px-5 items-center flex flex-col text-center">
-                <p class="p-2 font-medium text-3xl text-gray-800">{{ $user -> username }}</p>
-                <div class="flex mt-2 justify-center flex-wrap">
-                    <div class="m-2">
-                        <p class="font-light">0</p>
-                        <p class="text-gray-800 text-sm mb-3 font-medium">
+            <div class="col-span-2 md:col-span-1 w-full px-5 flex flex-col text-center md:text-left">
+                <p class="p-2 ps-0 font-medium text-3xl text-gray-800">{{ $user -> username }}</p>
+                <div class="grid md:grid-cols-3 gap-2">
+                    <div class="">
+                        <span class="font-light">0</span>
+                        <span class="text-gray-800 text-sm mb-3 font-medium">
                             Seguidores
-                        </p>
+                        </span>
                     </div>
-                    <div class="m-2">
-                        <p class="font-light">0</p>
-                        <p class="text-gray-800 text-sm mb-3 font-medium">
+                    <div class="">
+                        <span class="font-light">0</span>
+                        <span class="text-gray-800 text-sm mb-3 font-medium">
                             Siguiendo
-                        </p>
+                        </span>
                     </div>
-                    <div class="m-2">
-                        <p class="font-light">0</p>
-                        <p class="text-gray-800 text-sm mb-3 font-medium">
+                    <div class="">
+                        <span class="font-light">0</span>
+                        <span class="text-gray-800 text-sm mb-3 font-medium">
                             Posts
-                        </p>
+                        </span>
                     </div>
                 </div>
             </div>
