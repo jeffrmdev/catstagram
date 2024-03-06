@@ -1,18 +1,15 @@
 @extends('layouts.app')
 
-@section('titulo')
-    Iniciar sesión
-@endsection
-
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-6 md:items-center">
-        <div class="md:w-2/5 shadow-md">
+    <div class="sm:flex sm:justify-center">
+        <div class="sm:w-2/6 shadow-md">
             <img src="{{asset('img/registro.jpg')}}" 
                  alt="foto de perfil de un gato"
-                 class="w-full h-full object-cover object-center">
+                 class="w-full h-full object-cover">
         </div>
 
-        <div class="md:w-1/2 bg-white p-10 shadow-lg">
+        <div class="sm:w-5/12 bg-white p-10 shadow-lg">
+            <h1 class="text-3xl mb-5">Iniciar sesion</h1>
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="mb-10">
@@ -23,7 +20,7 @@
                         name="username"
                         oninput="copiarTexto(this.value)"
                         placeholder="Tu apodo genial o tu correo"
-                        class="@error('username') border-red-600 @enderror placeholder:italic w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                        class="@error('username') border-red-600 @enderror placeholder:font-extralight w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
                         value="{{ old('username') }}"
                     />
                     <script>
@@ -49,14 +46,14 @@
                         id="password" 
                         name="password" 
                         placeholder="Tu contraseña aquí"
-                        class="@error('password') border-red-600 @enderror placeholder:italic w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                        class="@error('password') border-red-600 @enderror placeholder:font-extralight w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
                     />
                     @error('password')
                         <p class="text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
                 
-                <div class="mt-8">
+                <div class="mt-5">
                     @if (session('error'))
                         <div class="mb-5 text-red-700">
                            <p class=""> {{ session('error')}} </p>
@@ -75,7 +72,7 @@
                     </div>
                     <input 
                         type="submit" 
-                        value="Crear cuenta"
+                        value="Iniciar sesión"
                         class="bg-green-800 w-full hover:bg-green-600 text-gray-200 p-3 font-thin transition-colors cursor-pointer"
                     />
                 </div>
