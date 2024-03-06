@@ -23,5 +23,8 @@ Route::post('/login', [LoginController::class,'store']);
 //Cerrar sesion
 Route::post('/logout', [LogoutController::class, 'store']) -> name('logout');
 
-
+//Enlace usuario
 Route::get('/{user:username}', [PostController::class,'index']) -> name('post.index');
+
+//Creacion de post
+Route::get('/post/create', [PostController::class,'create']) -> name('post.create');
