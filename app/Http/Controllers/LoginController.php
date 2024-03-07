@@ -33,11 +33,11 @@ class LoginController extends Controller
         #dd($request->all());
         if(Auth::attempt($request->only('username','password'), $request->remember)) 
         {
-            return redirect()->route("post.index", ["user" => Auth::user()]);
+            return redirect()->route("posts.index", ["user" => Auth::user()]);
         }
         else
         if(Auth::attempt($request->only('email','password'), $request->remember)){
-            return redirect()->route("post.index", ["user" => Auth::user()]);
+            return redirect()->route("posts.index", ["user" => Auth::user()]);
         }
 
         return back()->with('error','Usuario o contraseña incorrectos');

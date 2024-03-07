@@ -12,10 +12,37 @@ myDropzone.on("addedfile", file => {
 
 const dropzone = new Dropzone('#dropzone', {
   dictDefaultMessage: "Arrastra tu foto",
-  acceptedFiles: ".png, .jpg, .jpeg, .gif",
+  acceptedFiles: "image/*",
   addRemoveLinks: true,
   dictRemoveFile: "Quitar foto",
   maxFiles: 1,
   uploadMultiple: false,
+  thumbnailWidth: 1000,
+  thumbnailHeight: 1000,
+  init:function(){
+    if(document.querySelector('[name="image"]').value.trim()){
+      this.removeAllFiles();
+      const imagePublish = {};
+      imagePublish.name = document.querySelector('[name="image"]').value;
+      this.options.addedfile.call(this, imagePublish);
+      this.options.thumbnail.call(this, imagePublish, `/uploads/${imagePublish.name}`);
+      imagePublish.previewElement.classList.add('dz-success', 'dz-complete');
+      document.querySelector('.dz-button').classList.add("oculto");
+    }
+  },
 });
 
+
+dropzone.on('success', function(file, response){
+  //document.getElementById('image').value = response.image;
+  document.querySelector('[name="image"]').value = response.image;
+});
+
+dropzone.on('removedfile', function(file, response){
+  document.querySelector("[name='image']").value = "";
+});
+
+dropzone.on("maxfilesexceeded", function(file)
+{
+    this.removeFile(file);
+});

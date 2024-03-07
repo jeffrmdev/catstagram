@@ -9,10 +9,10 @@
         </div>
 
         <div class="sm:w-5/12 bg-white p-10 shadow-lg">
-            <h1 class="text-3xl mb-5">Iniciar sesion</h1>
+            <h1 class="text-3xl mb-5 text-left">Iniciar sesion</h1>
             <form action="{{ route('login') }}" method="POST">
                 @csrf
-                <div class="mb-10">
+                <div class="mb-10 text-left">
                     <label for="username" class="block font-light mb-2">Usuario o correo electrónico:</label>
                     <input 
                         type="text" 
@@ -39,7 +39,7 @@
                 </div>
 
 
-                <div class="mt-10">
+                <div class="mt-10 text-left">
                     <label for="password" class="block font-light mb-2">Contraseña:</label>
                     <input 
                         type="password" 
