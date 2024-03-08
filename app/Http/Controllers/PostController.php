@@ -11,20 +11,22 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware("auth");
+        $this->middleware("auth")->except(['show','index']);
     }
 
     public function index(User $user)
     {
+        $post = Post::where("user_id", $user->id)->paginate(6);
+        
         return view("dahsboard", [
-            "user" => $user
+            "user" => $user,
+            "posts"=> $post
         ]);
     }
     public function create()
     {
         return view('posts.create');
     }
-
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -45,8 +47,15 @@ class PostController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect() -> route('posts.index', auth()->user()->username);
-        
+        return redirect() -> route('posts.index', auth()->user()->username);  
+    }
+
+    public function show(User $user, Post $post)
+    {
+        return view ('posts.show', [
+            'post' => $post,
+            'user' => $user
+        ]);
     }
 
 }

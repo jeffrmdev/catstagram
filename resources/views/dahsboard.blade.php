@@ -41,6 +41,33 @@
             </div>
         </div>
     </div>
+
+    <section class="container w-full">
+
+        @if($posts->count())
+
+        <h2 class="text-4xl my-10">Publicaciones</h2>
+
+        <div class="grid grid-cols-3 grid-flow-dense gap-1">     
+            @foreach ($posts as $post)
+            <div class="">
+                <a href=" {{ route('posts.show', ['post' => $post, 'user' => $user]) }} ">
+                    <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->imagen }}">
+                </a>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="my-5">
+            {{ $posts->links('pagination::tailwind')}}
+        </div>
+
+        @else
+
+        <p class="m-5">No hay publicaciones</p>
+
+        @endif
+    </section>
     
 
 @endsection
