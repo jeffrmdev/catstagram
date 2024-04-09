@@ -19,7 +19,6 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-
         $request->request->add(['username' => Str::slug($request->username)]);
         //Validación de datos
         $this->validate($request, [
@@ -28,9 +27,7 @@ class RegisterController extends Controller
             'username' => 'required|unique:users|min:3|max:20',
             'email' => 'required|unique:users|min:3|max:50',
             'password' => 'required|confirmed|min:6 '
-        ]);
-
-        
+        ]);   
 
         User::create([
             'name' => $request->name,
@@ -42,8 +39,6 @@ class RegisterController extends Controller
         
         //Guardar autenticación del usuario
         Auth::attempt($request->only('username', 'email','password'));
-        return redirect()->route('post.index', ["user" => $request->user()]);
-
+        return redirect()->route('posts.index', ["user" => $request->user()]);
     }
-
 }
