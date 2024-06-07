@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('titulo')
-    @if(Auth::check() && Auth::user()->id == $user->id)
-    Tu
-    @endif
-    Perfil
 @endsection
 
 
@@ -32,21 +28,35 @@
                         </span>
                     </div>
                     <div class="">
+                    @if($posts->count())
+                        <span class="font-light">{{$posts->count()}}</span>
+                        @if($posts->count() <= 1)
+                        <span class="text-gray-800 text-sm mb-3 font-medium">
+                            Post
+                        </span>
+                        @endif
+                        <span class="text-gray-800 text-sm mb-3 font-medium">
+                            Posts
+                        </span>
+                    @else
                         <span class="font-light">0</span>
                         <span class="text-gray-800 text-sm mb-3 font-medium">
                             Posts
                         </span>
+                    @endif
+                       
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="container w-full">
+    <section class="container w-full h-full">
 
         @if($posts->count())
 
-        <h2 class="text-4xl my-10">Publicaciones</h2>
+        <h1 class="my-10 py-5 text-left text-3xl border-b-2">Publicaciones</h1>
 
         <div class="grid grid-cols-3 grid-flow-dense gap-1">     
             @foreach ($posts as $post)
@@ -63,9 +73,9 @@
         </div>
 
         @else
-
-        <p class="m-5">No hay publicaciones</p>
-
+        <div class="flex m-auto w-full  h-96 justify-center items-center">
+            <p class="">No hay publicaciones</p>
+        </div>
         @endif
     </section>
     
