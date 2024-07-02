@@ -7,14 +7,15 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     @stack('style')
-    <title>Devstagram - @yield('titulo')</title>
+    <title>Catstagram - @yield('titulo')</title>
 </head>
 
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-white shadow-inner">
-        <div class=" container mx-auto flex justify-around align-middle p-5 border-p items-center">
-            <h1 class="text-3xl font-bold">
-                <a href="/">CatStragram</a>
+        <div class="flex justify-between">
+            <h1 class="text-3xl m-auto font-bold flex ">
+                <a href="/" class="flex flex-row-reverse content-center"><span>Catstragram</span>
+                <img class="h-full" src="{{ asset('img/icons/icon_cat_catstagram.svg')}}" alt="Icono de Catstagram"></a>
             </h1>
             @auth
 
@@ -34,26 +35,23 @@
                         <button type="submit" class="p-2 uppercase" href="{{ route('logout') }}"/> Cerrar sesión </a>
                     </form>
                 </nav>
-
                 
-
 
                 
             @endauth
             @guest
+            <div class="m-auto">
                 <nav class="flex flex-row items-center">
-                    <a class="text-sm p-2 uppercase font-light" href="{{ route('login') }}">Entrar</a>
-                    <a class="text-sm p-2 uppercase font-light" href="{{ route('register') }}">Crear cuenta</a>
+                    <a class="border-black border rounded-full p-2 px-3 mx-1 transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light" href="{{ route('login') }}">Entrar</a>
+                    <a class="border-black border rounded-full p-2 px-3 mx-1 transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light" href="{{ route('register') }}">Crear cuenta</a>
                 </nav>
+            </div>
             @endguest
         </div>
     </header>
 
     <!-- Información de las vistas !-->
-    <main class="container w-full m-auto text-center">
-        <h2 class="font-thin text-4xl mt-5 mb-10">
-            @yield('titulo')
-        </h2>
+    <main class="container w-full m-auto flex text-center content-center justify-center">
 
         @yield('contenido')
 

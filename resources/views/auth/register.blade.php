@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('titulo')
-@endsection
+@section('titulo','Registro de usuario')
+
 
 @section('contenido')
-    <div class="md:flex justify-center">
-        <div class="w-1/3 shadow-md">
+    <div class="w-3/5 bg-white flex justify-center my-5 rounded-3xl">
+        <div class="w-2/5">
             <img src="{{asset('img/registro.jpg')}}" 
                  alt="foto de perfil de un gato"
-                 class="w-full h-full object-cover">
+                 class="h-full aspect-square rounded-l-3xl object-cover">
         </div>
 
-        <div class="md:w-1/2 bg-white p-10 shadow-lg">
+        <div class="w-8/12 p-10">
             <h1 class="text-3xl mb-5 text-left">Registrate en <strong>Catstagram</strong></h1>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
@@ -22,8 +22,8 @@
                             type="text" 
                             id="name" 
                             name="name" 
-                            placeholder="Aquí tu nombre"
-                            class="@error('name') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                            placeholder="Ej: Milaneso"
+                            class="@error('name') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                             value="{{ old('name') }}"
                        />
                         @error('name')
@@ -36,8 +36,8 @@
                             type="text" 
                             id="lastname" 
                             name="lastname"
-                            placeholder="También tu apellido"
-                            class="@error('lastname') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                            placeholder="Ej: Delgado"
+                            class="@error('lastname') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                             value="{{ old('lastname') }}"
                         />
                         @error('lastname')
@@ -52,7 +52,7 @@
                         id="username" 
                         name="username"
                         placeholder="Puede ser un apodo genial"
-                        class="@error('username') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                        class="@error('username') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                         value="{{ old('username') }}"
                     />
                     @error('username')
@@ -65,8 +65,8 @@
                         type="text" 
                         id="email" 
                         name="email"
-                        placeholder="Tu correo electrónico"
-                        class="@error('email') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                        placeholder="Ej: milaneso@correo.com"
+                        class="@error('email') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                         value="{{ old('email') }}"
                     />
                     @error('email')
@@ -81,7 +81,7 @@
                             id="password" 
                             name="password" 
                             placeholder="Tu contraseña aquí"
-                            class="@error('password') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                            class="@error('password') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                         />
                         @error('password')
                             <p class="text-red-600">{{ $message }}</p>
@@ -94,7 +94,7 @@
                             id="password_confirmation" 
                             name="password_confirmation"
                             placeholder="Valida tu contraseña"
-                            class="@error('password') border-red-600 @enderror w-full border-b-2 bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-2"
+                            class="@error('password') border-red-600 @enderror placeholder:font-extralight w-full border rounded-full bg-white border-gray-400 focus:outline-none focus:border-gray-950 p-3"
                         />
                         @error('password')
                             <p class="text-red-600">{{ $message }}</p>
@@ -105,7 +105,7 @@
                     <input 
                         type="submit" 
                         value="Crear cuenta"
-                        class="bg-green-800 w-full hover:bg-green-600 text-gray-200 p-3 font-thin transition-colors cursor-pointer"
+                        class="rounded-full p-2 px-5 mx-1 bg-teal-950 text-gray-50 uppercase font-light transition-colors cursor-pointer hover:bg-teal-700 hover:border-transparent"
                     />
                 </div>
             </form>

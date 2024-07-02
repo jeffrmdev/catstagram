@@ -5,3 +5,18 @@
 .img{
     aspect-ratio: 1/1;
 }
+
+
+/* Toggle B */
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: white;
+  }
+  .back{
+    background:gray;
+  }
+  
+  input:checked ~ .back {
+   background:rgb(2, 82, 2);
+  }
+  
