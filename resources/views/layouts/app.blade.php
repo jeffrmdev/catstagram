@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
     @stack('style')
+    @vite('resources/js/dropzone.js')
+    @vite('resources/js/responsive-nav.js')
+    @vite('resources/css/app.css')
     <title>Catstagram - @yield('titulo')</title>
 </head>
 
@@ -14,8 +15,8 @@
     <header class="p-5 border-b bg-white shadow-inner">
         <div class="flex justify-items-stretch">
             <div class="text-3xl font-bold flex m-auto">
-                <a href="/" class="flex flex-row-reverse"><span>Catstragram</span>
-                <img class="h-full" src="{{ asset('img/icons/icon_cat_catstagram.svg')}}" alt="Icono de Catstagram"></a>
+                <a href="/" class="flex flex-row-reverse"><span class="invisible md:visible md:relative">Catstragram</span>
+                <img class="md:h-full h-10" src="{{ asset('img/icons/icon_cat_catstagram.svg')}}" alt="Icono de Catstagram"></a>
             </div>
             @auth
                 <div class="box-content flex m-auto">         
@@ -53,10 +54,13 @@
                 
             @endauth
             @guest
-            <div class="m-auto">
-                <nav class="flex flex-row items-center">
-                    <a class="border-black border rounded-full p-2 px-3 mx-1 transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light" href="{{ route('login') }}">Entrar</a>
-                    <a class="border-black border rounded-full p-2 px-3 mx-1 transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light" href="{{ route('register') }}">Crear cuenta</a>
+            <div class="m-auto relative content-center">
+                <a class="m-auto hidden" id="nav-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                </a>
+                <nav class="items-center flex gap-1 transition-all" id="nav-buttons">
+                    <a class="border-black border rounded-full p-2 px-3 text-center transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light login-buttons" href="{{ route('login') }}">Entrar</a>
+                    <a class="border-black border rounded-full p-2 px-3 responsive block w-full my-1 transition-colors hover:bg-teal-950 hover:text-gray-50 hover:border-transparent uppercase font-light login-buttons" href="{{ route('register') }}">Crear cuenta</a> 
                 </nav>
             </div>
             @endguest
