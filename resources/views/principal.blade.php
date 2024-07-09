@@ -4,5 +4,5 @@
 @endsection
 
 @section('contenido')
-    Contenido de esta Página
+<h1 class="m-20 text-5xl">Fotos de gatitos</h1>
 @endsection

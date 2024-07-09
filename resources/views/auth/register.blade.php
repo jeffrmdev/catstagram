@@ -4,19 +4,19 @@
 
 
 @section('contenido')
-    <div class="w-3/5 bg-white flex justify-center my-5 rounded-3xl">
-        <div class="w-2/5">
+    <div class="w-11/12 md:w-11/12 lg:w-4/6 bg-white md:flex justify-center my-5 rounded-3xl">
+        <div class="w-full md:w-2/5">
             <img src="{{asset('img/registro.jpg')}}" 
                  alt="foto de perfil de un gato"
-                 class="h-full aspect-square rounded-l-3xl object-cover">
+                 class="h-40 w-full md:h-full md:aspect-square rounded-t-3xl md:rounded-none md:rounded-l-3xl object-cover">
         </div>
 
-        <div class="w-8/12 p-10">
-            <h1 class="text-3xl mb-5 text-left">Registrate en <strong>Catstagram</strong></h1>
+        <div class="md:w-8/12 p-10">
+            <h1 class="text-2xl sm:text-3xl mb-5 text-left transition-all">Registrate en <strong>Catstagram</strong></h1>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-                <div class="mt-10 flex">
-                    <div class="w-1/2 mr-2">
+                <div class="mt-10 md:flex">
+                    <div class="md:w-1/2 mr-2">
                         <label for="name" class="text-left block font-light mb-2">Nombre:</label>
                         <input 
                             type="text" 
@@ -30,7 +30,7 @@
                             <p class="text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="w-1/2 ml-2">
+                    <div class="md:w-1/2 mr-2 mt-4 md:mt-0">
                         <label for="lastname" class="text-left block font-light mb-2">Apellido:</label>
                         <input 
                             type="text" 
@@ -73,8 +73,8 @@
                             <p class="text-red-600">{{ $message }}</p>
                         @enderror
                 </div>
-                <div class="mb-4 flex mt-4">
-                    <div class="w-1/2 mr-2">
+                <div class="mb-4 md:flex mt-4">
+                    <div class="md:w-1/2 mr-2">
                         <label for="password" class="text-left block font-light mb-2">Contraseña:</label>
                         <input 
                             type="password" 
@@ -87,7 +87,7 @@
                             <p class="text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="w-1/2 ml-2">
+                    <div class="md:w-1/2 mr-2 mt-4 md:mt-0">
                         <label for="password_confirmation" class="text-left block font-light mb-2">Confirma tu contraseña:</label>
                         <input 
                             type="password" 

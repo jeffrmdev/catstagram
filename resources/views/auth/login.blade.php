@@ -5,7 +5,7 @@
             <div class="w-full md:w-2/5">
                 <img src="{{asset('img/registro.jpg')}}" 
                      alt="foto de perfil de un gato"
-                     class="h-full object-cover rounded-t-3xl md:rounded-t-none md:rounded-l-3xl md:aspect-square"
+                     class="h-40 w-full md:h-full object-cover rounded-t-3xl md:rounded-t-none md:rounded-l-3xl md:aspect-square"
                      >
             </div>
             <div class="w-full h-5/6 md:w-8/12 p-10">
@@ -88,7 +88,7 @@
                                       </div>
                                 
                             </div>
-                        </div>d
+                        </div>
                         <input 
                             type="submit" 
                             value="Iniciar sesión"
