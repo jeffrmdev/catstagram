@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navBar = document.querySelector("#nav-bar");
     const navButtons = document.querySelector("#nav-buttons");
 
+    if(navBar) {
     function responsiveNavBar() {
         if (x.matches) {
             navBar.classList.remove("hidden");
@@ -41,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener("click", hideNavButtonsOnClickOutside);
+}
 });
