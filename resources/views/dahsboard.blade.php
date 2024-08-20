@@ -6,9 +6,9 @@
 
 @section('contenido')
 
-    <div class="md:grid md:grid-rows-1 md:grid-cols-4">
-        <div class="col-span-1 flex justify-center items-center text-center m-auto">
-            <div class="w-fit max-h-full gap-2 justify-between">
+    <div class="md:grid md:grid-rows-1 md:grid-cols-4 grid-flow-dense gap-10">
+        <div class="relative col-start-1 col-end-2 inline-grid justify-center">
+            <div class="m-0">
                 <div class="items-center col-span-2 md:col-span-1 w-32 mt-5">
                     <img class="img rounded-full aspect-square object-cover" src="{{ asset('img/usercat.jpg')}}" alt="Imagen Usuario"/>
                 </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <section class="ms-10 p-5 col-span-3 m-auto justify-center">
+        <section class="p-5 col-span-3 m-auto justify-center w-auto md:w-[31rem] lg:w-[45rem]">
 
             @if($posts->count())
 
@@ -71,13 +71,13 @@
             <div class="my-5">
                 {{ $posts->links('pagination::tailwind')}}
             </div>
-
             @else
-            <div class="flex m-auto w-full  h-96 justify-center items-center">
-                <p class="">No hay publicaciones</p>
+            <div class="m-auto top-50 inline">                
+                <p class="text-center">No hay publicaciones</p>
             </div>
             @endif
         </section>
+        
         
     </div>
 @endsection
