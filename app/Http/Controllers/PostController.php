@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         
     
-        $post = Post::where("user_id", $user->id)->paginate(6);
+        $post = Post::where("user_id", $user->id)->paginate(9);
         return view("dahsboard", [
             "user" => $user,
             "posts"=> $post

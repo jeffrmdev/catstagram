@@ -58,7 +58,7 @@
 
             <h1 class="pt-5 text-gray-600 font-semibold text-left text-xl border-b-2">Publicaciones</h1>
 
-            <div class="grid grid-cols-3 grid-flow-dense gap-1 mt-5">     
+            <div id="scroll-photos" class="grid grid-cols-3 grid-flow-dense gap-1 mt-5">     
                 @foreach ($posts as $post)
                 <div class="hover:opacity-50 transition-opacity">
                     <a href=" {{ route('posts.show', ['post' => $post, 'user' => $user]) }} ">
@@ -68,7 +68,7 @@
                 @endforeach
             </div>
 
-            <div class="my-5">
+            <div class="p-5">
                 {{ $posts->links('pagination::tailwind')}}
             </div>
             @else
