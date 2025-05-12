@@ -38,7 +38,7 @@
                                 <p class=""><span>{{ $post->likes->count() }}</span> like</p>
                             </button>
                         </form>
-                        <p class="">0 comentarios</p>
+                        <p class="">10 comentarios</p>
                     </div>
                 @else
                     <div class="flex flex-row justify-between text-left m-auto font-extralight">
