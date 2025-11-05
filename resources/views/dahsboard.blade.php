@@ -18,7 +18,7 @@
                         <div class="whitespace-nowrap">
                             <span class="font-light">0</span>
                             <span class="text-gray-800 text-sm mb-3 font-medium">
-                                Seguidores
+                                Seguidor
                             </span>
                         </div>
                         <div class="whitespace-nowrap">
